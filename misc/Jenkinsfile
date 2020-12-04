@@ -13,7 +13,7 @@ node {
    }
    stage('docker build/push') {
      docker.withRegistry('registry:5000') {
-       def app = docker.build("registry:5000/docker-nodejs-demo:${commit_id}", '.').push()
+       def app = docker.build("docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
 }
